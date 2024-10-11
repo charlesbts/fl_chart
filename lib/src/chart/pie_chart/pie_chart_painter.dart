@@ -24,7 +24,9 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
 
     _sectionSaveLayerPaint = Paint();
 
-    _sectionStrokePaint = Paint()..style = PaintingStyle.stroke;
+    _sectionStrokePaint = Paint()
+      ..isAntiAlias = true
+      ..style = PaintingStyle.stroke;
 
     _centerSpacePaint = Paint()..style = PaintingStyle.fill;
   }
