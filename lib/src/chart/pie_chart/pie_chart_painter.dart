@@ -165,8 +165,8 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
       );
 
       canvasWrapper.save();
-      drawSection(section, sectionPath, canvasWrapper);
       drawSectionStroke(section, sectionPath, canvasWrapper, viewSize);
+      drawSection(section, sectionPath, canvasWrapper);
       canvasWrapper.restore();
       tempAngle += sectionDegree;
     }
