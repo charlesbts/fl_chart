@@ -165,6 +165,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
       );
 
       canvasWrapper
+        ..save()
         ..clipPath(sectionPath)
         ..saveLayer(
           Rect.fromLTWH(0, 0, viewSize.width, viewSize.height),
