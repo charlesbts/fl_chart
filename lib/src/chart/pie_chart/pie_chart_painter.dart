@@ -315,7 +315,6 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
   //  if (section.borderSide.width != 0.0 &&
    //     section.borderSide.color.opacity != 0.0) {
       canvasWrapper
-        ..save()
         ..clipPath(sectionPath)
         ..saveLayer(
           Rect.fromLTWH(0, 0, viewSize.width, viewSize.height),
@@ -338,7 +337,6 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
           sectionPath,
           _sectionStrokePaint,
         )
-        ..restore()
         ..restore();
    // }
   }
