@@ -20,7 +20,9 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
   /// parent can use [MediaQuery.textScaleFactor] to respect
   /// the system's font size.
   PieChartPainter() : super() {
-    _sectionPaint = Paint()..style = PaintingStyle.stroke;
+    _sectionPaint = Paint()
+      ..isAntiAlias = true
+      ..style = PaintingStyle.stroke;
 
     _sectionSaveLayerPaint = Paint();
 
@@ -143,7 +145,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
           canvasWrapper
             ..drawCircle(
               center,
-              centerRadius + section.radius - (section.borderSide.width / 2) + 3,
+              centerRadius + section.radius - (section.borderSide.width / 2),
               _sectionStrokePaint,
             )
 
