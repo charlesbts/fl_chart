@@ -327,7 +327,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
         section.borderSide.color.opacity != 0.0) {
       canvasWrapper
         ..saveLayer(
-          Rect.fromLTWH(0, 0, viewSize.width, viewSize.height),
+          Rect.fromLTWH(0, 0, viewSize.width + 1, viewSize.height + 1),
           Paint()..isAntiAlias = true,
         )
         ..clipPath(sectionPath);
