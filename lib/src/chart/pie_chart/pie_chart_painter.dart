@@ -312,8 +312,8 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
     CanvasWrapper canvasWrapper,
     Size viewSize,
   ) {
-    if (section.borderSide.width != 0.0 &&
-        section.borderSide.color.opacity != 0.0) {
+  //  if (section.borderSide.width != 0.0 &&
+   //     section.borderSide.color.opacity != 0.0) {
       canvasWrapper
         ..save()
         ..clipPath(sectionPath)
@@ -340,7 +340,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
         )
         ..restore()
         ..restore();
-    }
+   // }
   }
 
   /// Calculates layout of overlaying elements, includes:
