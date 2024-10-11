@@ -333,7 +333,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
         ..clipPath(sectionPath);
 
       _sectionStrokePaint
-        ..strokeWidth = section.borderSide.width * 2
+        ..strokeWidth = section.borderSide.width * 2 + 5
         ..color = section.borderSide.color;
       canvasWrapper
         ..drawPath(
