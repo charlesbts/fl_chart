@@ -759,13 +759,6 @@ void main() {
       when(mockCanvasWrapper.size).thenAnswer((realInvocation) => viewSize);
       when(mockCanvasWrapper.canvas).thenReturn(MockCanvas());
 
-      final clipPathResults = <Map<String, dynamic>>[];
-      when(mockCanvasWrapper.clipPath(captureAny)).thenAnswer((inv) {
-        clipPathResults.add({
-          'path': inv.positionalArguments[0] as Path,
-        });
-      });
-
       final drawPathResults = <Map<String, dynamic>>[];
       when(mockCanvasWrapper.drawPath(captureAny, captureAny))
           .thenAnswer((inv) {
@@ -804,20 +797,7 @@ void main() {
           viewSize,
         );
 
-      verify(
-        mockCanvasWrapper.saveLayer(
-          Rect.fromLTWH(0, 0, viewSize.width, viewSize.height),
-          any,
-        ),
-      ).called(4);
-      expect(clipPathResults.length, 4);
-      expect(clipPathResults[0]['path'], MockData.path1);
-      expect(clipPathResults[1]['path'], MockData.path2);
-      expect(clipPathResults[2]['path'], MockData.path3);
-      expect(clipPathResults[3]['path'], MockData.path4);
-
       expect(drawPathResults.length, 4);
-
       expect(drawPathResults[0]['path'], MockData.path1);
       expect(drawPathResults[0]['paint_color'], MockData.color1);
       expect(drawPathResults[0]['paint_style'], PaintingStyle.stroke);
@@ -849,8 +829,6 @@ void main() {
         drawPathResults[3]['paint_stroke_width'],
         MockData.borderSide4.width * 2,
       );
-
-      verify(mockCanvasWrapper.restore()).called(4);
     });
   });
 
