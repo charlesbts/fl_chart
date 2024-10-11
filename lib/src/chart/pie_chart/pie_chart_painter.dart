@@ -137,7 +137,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
         if (section.borderSide.width != 0.0 &&
             section.borderSide.color.opacity != 0.0) {
           _sectionStrokePaint
-            ..strokeWidth = section.borderSide.width
+            ..strokeWidth = section.borderSide.width + 1
             ..color = section.borderSide.color;
           // Outer
           canvasWrapper
@@ -331,7 +331,7 @@ class PieChartPainter extends BaseChartPainter<PieChartData> {
         ..clipPath(sectionPath);
 
       _sectionStrokePaint
-        ..strokeWidth = section.borderSide.width * 2
+        ..strokeWidth = section.borderSide.width * 2 + 1
         ..color = section.borderSide.color;
       canvasWrapper
         ..drawPath(
